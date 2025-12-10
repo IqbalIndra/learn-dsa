@@ -6,6 +6,7 @@ public class Main {
         linkedList.append(2);
         linkedList.append(3);
         linkedList.prepend(4);
+        linkedList.removeLast();
         linkedList.printList();
     }
 }
