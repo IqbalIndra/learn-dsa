@@ -5,10 +5,10 @@ public class Main {
         LinkedList linkedList = new LinkedList(1);
         linkedList.append(2);
         linkedList.append(3);
-        System.out.println(linkedList.get(2));
-        System.out.println(linkedList.get(0));
-        System.out.println(linkedList.get(-1));
-        System.out.println(linkedList.get(3));
+        System.out.println(linkedList.set(2 , 4));
+        System.out.println(linkedList.set(0, 5));
+        System.out.println(linkedList.set(-1 , 6));
+        System.out.println(linkedList.set(3 , 7));
 
         linkedList.printList();
     }
