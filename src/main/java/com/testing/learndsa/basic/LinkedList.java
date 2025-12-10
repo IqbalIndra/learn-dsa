@@ -54,9 +54,26 @@ public class LinkedList {
     }
 
     //4->3->2->
-    public int removeLast(){
+    //3->2->
+    public Node removeFirst(){
+        if(length ==0)
+            return null;
+
+        Node curr = getHead();
+        head = curr.next;
+        curr.next = null;
+        length--;
+
+        if(length ==0)
+            tail = null;
+
+        return curr;
+    }
+
+    //4->3->2->
+    public Node removeLast(){
         if(length == 0)
-            return 0;
+            return null;
 
         Node prev = getHead();
         Node curr = getHead();
@@ -75,7 +92,7 @@ public class LinkedList {
             tail = null;
         }
 
-        return getTail().value;
+        return getTail();
     }
 
     public Node getHead() {
