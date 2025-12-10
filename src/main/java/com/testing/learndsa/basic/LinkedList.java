@@ -53,6 +53,19 @@ public class LinkedList {
         length++;
     }
 
+    //4->3->2
+    //0->1->2
+    public Node get(int index){
+        if(index < 0 || index >= length)
+            return null;
+
+        Node curr = getHead();
+        for (int i = 0; i < index; i++) {
+            curr = curr.next;
+        }
+        return curr;
+    }
+
     //4->3->2->
     //3->2->
     public Node removeFirst(){

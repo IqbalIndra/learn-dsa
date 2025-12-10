@@ -5,12 +5,11 @@ public class Main {
         LinkedList linkedList = new LinkedList(1);
         linkedList.append(2);
         linkedList.append(3);
-        linkedList.prepend(4);
-        linkedList.removeFirst();
-        linkedList.removeFirst();
-        linkedList.removeFirst();
-        linkedList.removeFirst();
-        System.out.println(linkedList.removeFirst());
+        System.out.println(linkedList.get(2));
+        System.out.println(linkedList.get(0));
+        System.out.println(linkedList.get(-1));
+        System.out.println(linkedList.get(3));
+
         linkedList.printList();
     }
 }
