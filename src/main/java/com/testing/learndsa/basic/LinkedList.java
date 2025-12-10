@@ -53,6 +53,30 @@ public class LinkedList {
         length++;
     }
 
+    //1->2->3
+    //0->1->2
+    //1->4->2->3
+    public boolean insert(int index, int value){
+        if(index < 0 || index >= length)
+            return false;
+
+        if(index == 0){
+            prepend(value);
+        }else if(index == length-1) {
+            append(value);
+        }else{
+            Node temp = get(index-1);
+            Node newNode = new Node(value);
+
+            Node nextNode = temp.next;
+            temp.next = newNode;
+            newNode.next = nextNode;
+            length++;
+        }
+
+        return true;
+    }
+
     //4->3->2
     //0->1->2
     public boolean set(int index, int value){
