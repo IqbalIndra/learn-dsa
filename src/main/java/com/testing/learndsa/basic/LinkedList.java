@@ -40,6 +40,19 @@ public class LinkedList {
         length++;
     }
 
+    public void prepend(int value){
+        Node newNode = new Node(value);
+        if(length == 0){
+            head = newNode;
+            tail = newNode;
+        }else{
+            Node temp = getHead();
+            head = newNode;
+            head.next = temp;
+        }
+        length++;
+    }
+
     public Node getHead() {
         return head;
     }
