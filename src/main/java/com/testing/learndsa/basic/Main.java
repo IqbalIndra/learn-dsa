@@ -5,15 +5,14 @@ public class Main {
         LinkedList linkedList = new LinkedList(1);
         linkedList.append(2);
         linkedList.append(3);
+        linkedList.append(4);
+        linkedList.append(5);
+        System.out.println("------");
+        linkedList.printList();
+        System.out.println("------");
 
-        System.out.println(linkedList.insert(1 , 4));
-        System.out.println(linkedList.insert(0, 5));
-        System.out.println(linkedList.insert(4, 6));
-        System.out.println(linkedList.insert(1, 7));
-        System.out.println(linkedList.insert(6, 8));
-        System.out.println(linkedList.insert(7, 9));
-        System.out.println(linkedList.insert(0, 10));
-
+        linkedList.reverse();
+        System.out.println("After Reverse ----");
         linkedList.printList();
     }
 }

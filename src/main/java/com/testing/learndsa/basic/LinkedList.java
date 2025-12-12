@@ -53,6 +53,23 @@ public class LinkedList {
         length++;
     }
 
+    public void reverse(){
+        Node temp = getHead();
+        head = tail;
+        tail = temp;
+
+        Node before = null;
+        Node after;
+
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+
+    }
+
     //1->2->3
     //0->1->2
     //1->4->2->3
