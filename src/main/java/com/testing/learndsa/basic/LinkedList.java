@@ -6,8 +6,8 @@ public class LinkedList {
     private int length;
 
     class Node {
-        private int value;
-        private Node next;
+        int value;
+        Node next;
 
         public Node(int value) {
             this.value = value;
@@ -86,6 +86,20 @@ public class LinkedList {
             slow = slow.next;
         }
         return slow;
+    }
+
+    public boolean hasLoop(){
+        Node fast = getHead();
+        Node slow = getHead();
+
+        while(fast!= null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast)
+                return true;
+        }
+        return false;
     }
 
     //1->2->3

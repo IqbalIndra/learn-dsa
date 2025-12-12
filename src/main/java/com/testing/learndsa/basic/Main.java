@@ -10,7 +10,9 @@ public class Main {
         System.out.println("------");
         linkedList.printList();
         System.out.println("------");
+        System.out.println(linkedList.hasLoop());
 
-        System.out.println(linkedList.findMiddle());
+        linkedList.getTail().next = linkedList.getHead().next;
+        System.out.println(linkedList.hasLoop());
     }
 }
