@@ -11,8 +11,6 @@ public class Main {
         linkedList.printList();
         System.out.println("------");
 
-        linkedList.reverse();
-        System.out.println("After Reverse ----");
-        linkedList.printList();
+        System.out.println(linkedList.findMiddle());
     }
 }

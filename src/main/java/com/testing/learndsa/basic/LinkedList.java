@@ -70,6 +70,24 @@ public class LinkedList {
 
     }
 
+    /*
+        4->3->2->null
+        F
+        S
+              F
+           S
+     */
+    public Node findMiddle(){
+        Node fast = getHead();
+        Node slow = getHead();
+
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
     //1->2->3
     //0->1->2
     //1->4->2->3
