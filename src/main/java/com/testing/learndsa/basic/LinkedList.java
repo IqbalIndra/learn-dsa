@@ -53,6 +53,29 @@ public class LinkedList {
         length++;
     }
 
+    public Node findKthFromEnd(int k){
+        if(k <= 0) return null;
+
+        Node fast = getHead();
+        Node slow = getHead();
+
+        //          s
+        //                f
+        // 1->2->3->4->5->
+        for (int i = 0; i <k; i++) {
+            if(fast == null)
+                return null;
+            fast = fast.next;
+        }
+
+        while(fast != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
+    }
+
     public void reverse(){
         Node temp = getHead();
         head = tail;

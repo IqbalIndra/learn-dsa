@@ -2,6 +2,7 @@ package com.testing.learndsa.basic;
 
 public class Main {
     public static void main(String[] args) {
+
         LinkedList linkedList = new LinkedList(1);
         linkedList.append(2);
         linkedList.append(3);
@@ -10,9 +11,10 @@ public class Main {
         System.out.println("------");
         linkedList.printList();
         System.out.println("------");
-        System.out.println(linkedList.hasLoop());
 
-        linkedList.getTail().next = linkedList.getHead().next;
-        System.out.println(linkedList.hasLoop());
+        System.out.println(linkedList.findKthFromEnd(2).value);
+        System.out.println(linkedList.findKthFromEnd(4).value);
+        System.out.println(linkedList.findKthFromEnd(-2));
+        System.out.println(linkedList.findKthFromEnd(8));
     }
 }
