@@ -6,15 +6,16 @@ public class Main {
         LinkedList linkedList = new LinkedList(1);
         linkedList.append(2);
         linkedList.append(3);
+        linkedList.append(1);
         linkedList.append(4);
+        linkedList.append(2);
+        linkedList.append(5);
         linkedList.append(5);
         System.out.println("------");
         linkedList.printList();
         System.out.println("------");
-
-        System.out.println(linkedList.findKthFromEnd(2).value);
-        System.out.println(linkedList.findKthFromEnd(4).value);
-        System.out.println(linkedList.findKthFromEnd(-2));
-        System.out.println(linkedList.findKthFromEnd(8));
+        linkedList.removeDuplicate();
+        System.out.println("After Remove ------");
+        linkedList.printList();
     }
 }

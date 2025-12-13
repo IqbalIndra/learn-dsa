@@ -1,5 +1,8 @@
 package com.testing.learndsa.basic;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -51,6 +54,30 @@ public class LinkedList {
             head.next = temp;
         }
         length++;
+    }
+    //1->2->3->1->4->2->1->
+    //                     R
+    //            S
+    //1->2->3->4->2->1->
+
+    public void removeDuplicate(){
+        Set<Integer> unique = new HashSet<>();
+
+        Node runner = getHead();
+        Node slow = null;
+
+        while(runner != null){
+            if(unique.contains(runner.value)){
+                slow.next = runner.next;
+            }else{
+                unique.add(runner.value);
+                slow = runner;
+            }
+            runner = runner.next;
+
+        }
+
+
     }
 
     public Node findKthFromEnd(int k){
