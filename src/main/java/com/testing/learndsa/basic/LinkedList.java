@@ -80,6 +80,17 @@ public class LinkedList {
 
     }
 
+    public int binaryToDecimal(){
+        Node curr = getHead();
+        int num = 0;
+        while(curr != null ){
+            num= (2*num) + curr.value;
+            curr = curr.next;
+        }
+
+        return num;
+    }
+
     public Node findKthFromEnd(int k){
         if(k <= 0) return null;
 
