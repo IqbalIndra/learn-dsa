@@ -1,6 +1,8 @@
 package com.testing.learndsa.basic;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class LinkedList {
@@ -89,6 +91,42 @@ public class LinkedList {
         }
 
         return num;
+    }
+
+
+    public void partitionList(int x){
+        Node curr = getHead();
+        Node greaterNodes = new Node(0);
+        Node lessNodes = new Node(0);
+        Node temp1 = greaterNodes;
+        Node temp2 = lessNodes;
+        while(curr != null){
+            if(curr.value >= x){
+                temp1.next = curr;
+                temp1 = curr;
+            }else{
+                temp2.next = curr;
+                temp2 = curr;
+            }
+            curr = curr.next;
+        }
+
+        temp1.next = null;
+        temp2.next = greaterNodes.next;
+        head = lessNodes.next;
+    }
+
+    private Node getAppendNode(Node nodes, Node newNode) {
+        if(nodes == null){
+            nodes = newNode;
+        }else{
+            Node temp = nodes;
+            while(temp.next != null){
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
+        return nodes;
     }
 
     public Node findKthFromEnd(int k){
