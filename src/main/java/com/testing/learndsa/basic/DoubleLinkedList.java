@@ -37,6 +37,21 @@ public class DoubleLinkedList {
         length++;
     }
 
+    //1->2->
+    //3<->1->2
+    public void prepend(int val){
+        Node newNode = new Node(val);
+        if(length ==0){
+            head = newNode;
+            tail = newNode;
+        }else{
+            head.prev = newNode;
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+    }
+
     public Node removeLast(){
         if(length == 0) return null;
         Node temp = getTail();
