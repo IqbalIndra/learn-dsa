@@ -13,9 +13,9 @@ public class DoubleLinkedList {
     }
 
     class Node{
-        private int val;
-        private Node next;
-        private Node prev;
+        int val;
+        Node next;
+        Node prev;
 
         public Node(int val) {
             this.val = val;
@@ -35,6 +35,22 @@ public class DoubleLinkedList {
         }
 
         length++;
+    }
+
+    public Node removeLast(){
+        if(length == 0) return null;
+        Node temp = getTail();
+
+        if(length == 1){
+            head = null;
+            tail = null;
+        }else{
+            tail = temp.prev;
+            tail.next = null;
+            temp.prev = null;
+        }
+        length--;
+        return temp;
     }
 
     public void printList(){
