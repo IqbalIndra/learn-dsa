@@ -2,10 +2,17 @@ package com.testing.learndsa.basic;
 
 public class Main {
     public static void main(String[] args) {
-        DoubleLinkedList doubleLinkedList = new DoubleLinkedList(5);
-        doubleLinkedList.append(6);
-        doubleLinkedList.prepend(4);
-        doubleLinkedList.removeFirst();
-        doubleLinkedList.printList();
+        LRUCache lru = new LRUCache(2);
+        lru.put(1,1);
+        System.out.println(lru.get(1));
+        lru.put(2,2);
+        lru.put(3,3);
+        lru.put(4,4);
+        lru.print();
+        System.out.println(lru.get(2));
+        System.out.println(lru.get(1));
+        lru.put(3,8);
+        lru.print();
+
     }
 }
