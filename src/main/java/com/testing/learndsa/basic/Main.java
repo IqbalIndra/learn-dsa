@@ -2,12 +2,15 @@ package com.testing.learndsa.basic;
 
 public class Main {
     public static void main(String[] args) {
-        BrowserHistory browserHistory = new BrowserHistory("esgriv.com");
-        browserHistory.visit("cgrt.com");
-        browserHistory.visit("tip.com");
-        System.out.println(browserHistory.back(9));
-        browserHistory.visit("kttzxgh.com");
-        System.out.println(browserHistory.forward(7));
+        Twitter twitter = new Twitter();
+        twitter.postTweet(1, 5);
+        System.out.println(twitter.getNewsFeed(1));
+        twitter.follow(1,2);
+        twitter.postTweet(2,6);
+        twitter.postTweet(2,7);
+        System.out.println(twitter.getNewsFeed(1));
+        twitter.unfollow(1,2);
+        System.out.println(twitter.getNewsFeed(1));
 
     }
 }
